@@ -14,40 +14,6 @@ Private Function ValidateArguments()
     ValidateArguments = True
 End Function
 
-Private Sub EchoDateTimeFunction()
-    WScript.Echo("Echo VBScript Date/Time Function result")
-    Dim dtmToday, dtmNow
-    dtmToday = Date()
-    WScript.Echo("Date()         :" & dtmToday)
-    WScript.Echo("Year(today)    :" & Year(dtmToday))
-    WScript.Echo("Month(today)   :" & Month(dtmToday))
-    WScript.Echo("Day(today)     :" & Day(dtmToday))
-    WScript.Echo("Weekday(today) :" & Weekday(dtmToday))
-    Select Case Weekday(dtmToday)
-        Case vbSunday
-            WScript.Echo("Sunday sun sun")
-        Case vbMonday
-            WScript.Echo("Monday mon mon")
-        Case vbTuesday
-            WScript.Echo("Tuesday tue tue")
-        Case vbWednesday
-            WScript.Echo("Wednesday wed wed")
-        Case vbThursday
-            WScript.Echo("Thursday thu thu")
-        Case vbFriday
-            WScript.Echo("Friday fri fri")
-        Case vbSaturday
-            WScript.Echo("Saturday sat sat")
-        Case Else
-            WScript.Echo("Invalid Weekday")
-    End Select
-    dtmNow = Now()
-    WScript.Echo("Now()       :" & dtmNow)
-    WScript.Echo("Hour(now)   :" & Hour(dtmNow))
-    WScript.Echo("Minute(now) :" & Minute(dtmNow))
-    WScript.Echo("Second(now) :" & Second(dtmNow))
-End Sub
-
 Private Function PadLeft(ByVal strValue, ByVal intTotalLength, ByVal strPadding)
     Dim strResult
     strResult = strValue
@@ -74,10 +40,10 @@ Private Function Main()
     strSrcFile = WScript.Arguments.Named.Item("srcfile")
     strDstDir = WScript.Arguments.Named.Item("dstdir")
 
-    Call EchoDateTimeFunction()
     Dim strDate
     strDate = FormatDate(Date())
     WScript.Echo("strDate: " & strDate)
+    WScript.Echo()
 
     WScript.Echo("Hello, WSH!")
     WScript.Echo()

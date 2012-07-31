@@ -36,4 +36,16 @@
         </runtime>
         <script language="VBScript" src="echo-wscript-properties.vbs" />
     </job>
+    <job id="EchoDateTimeFunction">
+        <?job error="false" debug="true"?>
+        <runtime>
+            <description>
+                VBScriptのDate/Time関数の結果を出力する。
+            </description>
+            <example>
+                Example: cscript scripts.wsf //Job:EchoDateTimeFunction
+            </example>
+        </runtime>
+        <script language="VBScript" src="echo-datetime-function.vbs" />
+    </job>
 </package>
