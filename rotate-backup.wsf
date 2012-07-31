@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<package>
+    <job id="RotateBackup">
+        <?job error="false" debug="true"?>
+        <runtime>
+            <description>
+                バックアップをローテーションする。
+            </description>
+            <named
+                name="srcfile"
+                helpstring="バックアップするファイル"
+                type="string"
+                required="true"
+                />
+            <named
+                name="dstdir"
+                helpstring="バックアップ先のディレクトリ"
+                type="string"
+                required="true"
+                />
+            <example>
+                Example: rotate-backup.wsf /srcfile:src.zip /dstdir:C:\backup
+            </example>
+        </runtime>
+        <script language="VBScript">
+            WScript.Echo("Hello, WSH!")
+        </script>
+    </job>
+</package>
