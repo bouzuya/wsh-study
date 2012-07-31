@@ -1,35 +1,17 @@
 Option Explicit
 
-Private Function ValidateArguments()
-    If Not WScript.Arguments.Named.Exists("srcfile") Then
-        WScript.Echo("srcfile is required.")
-        ValidateArguments = False
-        Exit Function
-    End If
-    If Not WScript.Arguments.Named.Exists("dstdir") Then
-        WScript.Echo("dstdir is required.")
-        ValidateArguments = False
-        Exit Function
-    End If
-    ValidateArguments = True
-End Function
+Public Sub Import(ByVal strFileName)
+    Const ForReading = 1
+    Dim objFso, objFile
+    Set objFso = WScript.CreateObject("Scripting.FileSystemObject")
+    Set objFile = objFso.OpenTextFile(strFileName, ForReading, False)
+    ExecuteGlobal objFile.ReadAll()
+    objFile.Close()
+End Sub
 
-Private Function PadLeft(ByVal strValue, ByVal intTotalLength, ByVal strPadding)
-    Dim strResult
-    strResult = strValue
-    While Len(strResult) < intTotalLength
-        strResult = strPadding & strResult
-    Wend
-    PadLeft = strResult
-End Function
-
-Private Function FormatDate(ByVal dtmDate)
-    Dim strYear, strMonth, strDay
-    strYear = CStr(Year(dtmDate))
-    strMonth = PadLeft(CStr(Month(dtmDate)), 2, "0")
-    strDay = PadLeft(CStr(Day(dtmDate)), 2, "0")
-    FormatDate = strYear & "-" & strMonth & "-" & strDay
-End Function
+Call Import("string.vbs")
+Call Import("rotate-backup-arguments.vbs")
+Call Import("rotate-backup-datetime.vbs")
 
 Private Function Main()
     If Not ValidateArguments() Then
