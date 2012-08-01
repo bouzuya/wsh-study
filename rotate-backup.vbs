@@ -1,18 +1,5 @@
 Option Explicit
 
-Public Sub Import(ByVal strFileName)
-    Const ForReading = 1
-    Dim objFso, objFile
-    Set objFso = WScript.CreateObject("Scripting.FileSystemObject")
-    Set objFile = objFso.OpenTextFile(strFileName, ForReading, False)
-    ExecuteGlobal objFile.ReadAll()
-    objFile.Close()
-End Sub
-
-Call Import("string.vbs")
-Call Import("rotate-backup-arguments.vbs")
-Call Import("rotate-backup-datetime.vbs")
-
 Private Function Main()
     If Not ValidateArguments() Then
         Main = 1

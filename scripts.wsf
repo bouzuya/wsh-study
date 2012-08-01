@@ -22,6 +22,9 @@
                 Example: cscript scripts.wsf //Job:RotateBackup /srcfile:src.zip /dstdir:C:\dst
             </example>
         </runtime>
+        <script language="VBScript" src="string.vbs" />
+        <script language="VBScript" src="rotate-backup-arguments.vbs" />
+        <script language="VBScript" src="rotate-backup-datetime.vbs" />
         <script language="VBScript" src="rotate-backup.vbs" />
     </job>
     <job id="EchoWscriptProperties">
