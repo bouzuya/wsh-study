@@ -25,6 +25,7 @@
         <script language="VBScript" src="string.vbs" />
         <script language="VBScript" src="rotate-backup-arguments.vbs" />
         <script language="VBScript" src="rotate-backup-datetime.vbs" />
+        <script language="VBScript" src="rotate-backup-fso.vbs" />
         <script language="VBScript" src="rotate-backup.vbs" />
     </job>
     <job id="EchoWscriptProperties">
