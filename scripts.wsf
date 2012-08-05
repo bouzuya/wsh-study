@@ -23,6 +23,7 @@
             </example>
         </runtime>
         <script language="VBScript" src="string.vbs" />
+        <script language="VBScript" src="datetime.vbs" />
         <script language="VBScript" src="rotate-backup-arguments.vbs" />
         <script language="VBScript" src="rotate-backup-datetime.vbs" />
         <script language="VBScript" src="rotate-backup-fso.vbs" />
